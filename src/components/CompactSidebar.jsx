@@ -7,12 +7,13 @@ const CompactSidebar = ({ activeModal, onSearchClick, onNotificationClick, onBac
         <div className="justify-start text-sky-500 text-4xl font-normal font-['Guttery']">O</div>
       </div>
       <div className="flex flex-col justify-start items-start gap-1">
-        {/* Home - dengan onClick untuk kembali ke normal */}
+        {/* Home - dengan filled home icon karena kembali ke normal */}
         <div className="h-12 p-3 bg-black rounded-lg inline-flex justify-start items-center gap-2.5 overflow-hidden cursor-pointer hover:bg-neutral-800 transition-colors" onClick={onBackToNormal}>
           <div data-svg-wrapper="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="#fff" stroke-width="2.5" d="M12 1.25c.38 0 .694.087.97.25l.116.074.007.005 9 6.172.01.007c.16.106.287.23.39.373l.093.15c.085.156.135.31.154.469l.01.161v12.346c0 .334-.1.619-.355.896l-.12.12c-.306.278-.65.436-1.083.47l-.191.007H16.5c-.107 0-.16-.02-.193-.042l-.03-.024a.213.213 0 0 1-.025-.027v.001l-.002-.033v-6.854c0-.648-.224-1.235-.646-1.706l-.194-.194a2.747 2.747 0 0 0-1.645-.71l-.262-.01H10.5c-.619 0-1.206.175-1.705.55l-.208.173a2.518 2.518 0 0 0-.822 1.621l-.015.274v6.86a.192.192 0 0 1-.002.03l-.023.025a.221.221 0 0 1-.133.06l-.09.006H3c-.46 0-.825-.123-1.142-.366l-.132-.111c-.301-.276-.44-.554-.47-.877l-.006-.14V8.914c0-.165.03-.322.092-.477l.074-.156c.086-.157.195-.294.333-.412l.148-.111.01-.007 9-6.172.007-.005A1.825 1.825 0 0 1 12 1.25Z"/>
             </svg>
+
           </div>
         </div>
         
@@ -34,11 +35,10 @@ const CompactSidebar = ({ activeModal, onSearchClick, onNotificationClick, onBac
           </div>
         </div>
         
-        {/* Notifications - dengan kondisi active */}
+        {/* Notifications - dengan kondisi active dan SVG yang berubah */}
         <div className={`h-12 p-3 bg-black rounded-lg inline-flex justify-start items-center gap-2.5 overflow-hidden cursor-pointer hover:bg-neutral-800 transition-colors ${activeModal === 'notification' ? 'outline outline-2 outline-offset-[-2px] outline-neutral-300' : ''}`} onClick={onNotificationClick}>
           <div data-svg-wrapper="true">
             {activeModal === 'notification' ? (
-              // SVG untuk state active (filled heart)
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="none" viewBox="0 0 24 22">
                 <g clipPath="url(#a)">
                   <path fill="#fff" d="M6 .5C2.687.5 0 3.11 0 6.33c0 2.598 1.05 8.767 11.386 15.002a1.205 1.205 0 0 0 1.228 0C22.951 15.096 24 8.928 24 6.329 24 3.11 21.313.5 18 .5s-6 3.533-6 3.533S9.313.5 6 .5Z"/>
@@ -50,7 +50,6 @@ const CompactSidebar = ({ activeModal, onSearchClick, onNotificationClick, onBac
                 </defs>
               </svg>
             ) : (
-              // SVG untuk state normal (outline heart)
               <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 1.75C20.6572 1.75 22.75 3.83379 22.75 6.3291C22.75 7.44362 22.5294 9.40953 21.1055 11.834C19.6797 14.2615 17.0072 17.2161 12 20.2422C6.99327 17.216 4.32046 14.2616 2.89453 11.834C1.4704 9.40946 1.25 7.44348 1.25 6.3291C1.25005 3.83379 3.34281 1.75 6 1.75C7.2293 1.75 8.45068 2.42016 9.4541 3.23633C9.93863 3.63047 10.334 4.027 10.6074 4.3252C10.7434 4.47346 10.8471 4.59559 10.915 4.67773C10.949 4.71875 10.9741 4.75034 10.9893 4.76953C10.9967 4.77892 11.0022 4.78563 11.0049 4.78906V4.79004C11.2413 5.10071 11.6096 5.2832 12 5.2832C12.3902 5.2832 12.7577 5.10043 12.9941 4.79004L12.9951 4.78906C12.9978 4.78563 13.0033 4.77892 13.0107 4.76953C13.0259 4.75034 13.051 4.71875 13.085 4.67773C13.1529 4.59559 13.2566 4.47346 13.3926 4.3252C13.666 4.027 14.0614 3.63047 14.5459 3.23633C15.5493 2.42016 16.7707 1.75 18 1.75Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
