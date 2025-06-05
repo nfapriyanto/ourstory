@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+
+}
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
